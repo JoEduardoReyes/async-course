@@ -1,5 +1,5 @@
 // Se requiere el módulo 'xmlhttprequest' para hacer solicitudes HTTP
-const XMLHttpRequest = require("xmlhttprequest");
+const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 // Se define la URL de la API a la que se hará la solicitud
 const API = "https://api.escuelajs.co/api/v1";
@@ -31,3 +31,33 @@ function fectchData(urlAPI, callback) {
 	// Se envía la solicitud HTTP
 	xhttp.send();
 }
+
+// Se llama a la función 'fectchData' para obtener los productos de la API
+fectchData(`${API}/products`, function (error1, data1) {
+	// Si hay un error, se muestra en la consola
+	if (error1) return console.error(error1);
+
+	// Se llama a la función 'fectchData' para obtener los detalles del primer producto de la API
+	fectchData(`${API}/products/${data1[0].id}`, function (error2, data2) {
+		// Si hay un error, se muestra en la consola
+		if (error2) return console.error(error2);
+
+		// Se llama a la función 'fectchData' para obtener los detalles de la categoría del producto
+		fectchData(
+			`${API}/categories/${data2?.category.id}`,
+			function (error3, data3) {
+				// Si hay un error, se muestra en la consola
+				if (error3) return console.error(error3);
+
+				// Se imprime en la consola los detalles del primer producto
+				console.log(data1[0]);
+
+				// Se imprime en la consola el título del producto
+				console.log(data2.title);
+
+				// Se imprime en la consola el nombre de la categoría del producto
+				console.log(data3.name);
+			}
+		);
+	});
+});
