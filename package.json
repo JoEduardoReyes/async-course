@@ -1,17 +1,18 @@
 {
-  "name": "curso-asincronismo",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "JavaScript"
-  ],
-  "author": "Edark <joeduaroreyes@outlook.com>",
-  "license": "MIT",
-  "dependencies": {
-    "xmlhttprequest": "^1.8.0"
-  }
+	"name": "curso-asincronismo",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"callback": "node src/callback/challenge.js"
+	},
+	"keywords": [
+		"JavaScript"
+	],
+	"author": "Edark <joeduaroreyes@outlook.com>",
+	"license": "MIT",
+	"dependencies": {
+		"xmlhttprequest": "^1.8.0"
+	}
 }
