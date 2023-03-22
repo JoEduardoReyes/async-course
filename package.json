@@ -10,5 +10,8 @@
     "JavaScript"
   ],
   "author": "Edark <joeduaroreyes@outlook.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "xmlhttprequest": "^1.8.0"
+  }
 }
